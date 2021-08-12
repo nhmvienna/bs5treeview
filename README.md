@@ -1,39 +1,18 @@
-# Bootstrap 4 Tree View
+# Bootstrap 5 Tree View
 
----
+this is a fork of https://github.com/chniter/bstreeview
+For use with bootstrap 5 the attributes have been changed from data-target and data-toggle to the new data-bs-target and data-bs-toogle syntax.
 
-[![npm version](https://img.shields.io/npm/v/bstreeview.svg?style=flat)](https://www.npmjs.com/package/bstreeview)
+A very simple plugin to build a basic and elegant Treeview with boostrap 5.
 
-A very simple plugin to build a basic and elegant Treeview with boostrap 4.
 
-![Bootstrap Tree View Default](https://github.com/chniter/bstreeview/blob/master/screeshots/bstreeview.PNG?raw=true)
 
 ## Dependencies
 
 Where provided these are the actual versions bootstrap-treeview has been tested against.  
 
-- [Bootstrap v4.4.1 (>= 4.3.1)](http://getbootstrap.com/)
+- [Bootstrap v5)](http://getbootstrap.com/)
 - [jQuery v3.4.1 (>= 1.9.0)](http://jquery.com/)
-
-## Support
-Has this Project helped you learn something New? or Helped you at work? Do Consider Supporting.
-
-<a href="https://www.buymeacoffee.com/schniter" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" width="200"  ></a>
-
-
-## Getting Started
-
-### Install
-
-You can install using npm (recommended):
-
-```javascript
-$ npm install bstreeview
-```
-
-or [download](https://github.com/chniter/bstreeview/releases/tag/v1.2.0) manually.
-
-
 
 ### Usage
 
