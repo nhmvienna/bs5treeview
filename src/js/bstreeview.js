@@ -26,7 +26,7 @@
      */
     var templates = {
         treeview: '<div class="bstreeview"></div>',
-        treeviewItem: '<div role="treeitem" class="list-group-item" data-toggle="collapse"></div>',
+        treeviewItem: '<div role="treeitem" class="list-group-item" data-bs-toggle="collapse"></div>',
         treeviewGroupItem: '<div role="group" class="list-group collapse" id="itemid"></div>',
         treeviewItemStateIcon: '<i class="state-icon"></i>',
         treeviewItemIcon: '<i class="item-icon"></i>'
@@ -120,7 +120,7 @@
             $.each(nodes, function addNodes(id, node) {
                 // Main node element.
                 var treeItem = $(templates.treeviewItem)
-                    .attr('data-target', "#" + _this.itemIdPrefix + node.nodeId)
+                    .attr('data-bs-target', "#" + _this.itemIdPrefix + node.nodeId)
                     .attr('style', 'padding-left:' + leftPadding)
                     .attr('aria-level', depth);
                 // Set Expand and Collapse icones.
