@@ -1,6 +1,6 @@
 # Bootstrap 5 Tree View
 
-this is a fork of https://github.com/chniter/bstreeview
+this is a fork of https://github.com/chniter/bstreeview.
 For use with bootstrap 5 the attributes have been changed from data-target and data-toggle to the new data-bs-target and data-bs-toogle syntax.
 
 A very simple plugin to build a basic and elegant Treeview with boostrap 5.
