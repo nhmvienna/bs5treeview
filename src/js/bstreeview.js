@@ -80,6 +80,11 @@
                         window.location = e.target.getAttribute('href');
                     }
                 }
+                else
+                {
+                    // Toggle the data-bs-target. Issue with Bootstrap toggle and dynamic code
+                    $($(this).attr("data-bs-target")).collapse('toggle');
+                }
             });
         },
         /**
