@@ -1,11 +1,12 @@
 /*! @preserve
  * bstreeview.js
- * Version: 1.2.0
+ * Version: 1.2.1
  * Authors: Sami CHNITER <sami.chniter@gmail.com>
  * Copyright 2020
  * License: Apache License 2.0
  *
  * Project: https://github.com/chniter/bstreeview
+ * Project: https://github.com/nhmvienna/bs5treeview (bootstrap 5)
  */
 ; (function ($, window, document, undefined) {
     "use strict";
