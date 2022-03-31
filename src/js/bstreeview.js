@@ -16,6 +16,7 @@
         defaults = {
             expandIcon: 'fa fa-angle-down fa-fw',
             collapseIcon: 'fa fa-angle-right fa-fw',
+            expandClass: 'show',
             indent: 1.25,
             parentsMarginLeft: '1.25rem',
             openNodeLinkOnNewTab: true
@@ -33,8 +34,8 @@
     };
     /**
      * BsTreeview Plugin constructor.
-     * @param {*} element 
-     * @param {*} options 
+     * @param {*} element
+     * @param {*} options
      */
     function bstreeView(element, options) {
         this.element = element;
@@ -84,7 +85,7 @@
         },
         /**
          * Initialize treeview Data.
-         * @param {*} node 
+         * @param {*} node
          */
         initData: function (node) {
             if (!node.nodes) return;
@@ -103,9 +104,9 @@
         },
         /**
          * Build treeview.
-         * @param {*} parentElement 
-         * @param {*} nodes 
-         * @param {*} depth 
+         * @param {*} parentElement
+         * @param {*} nodes
+         * @param {*} depth
          */
         build: function (parentElement, nodes, depth) {
             var _this = this;
@@ -126,7 +127,7 @@
                 // Set Expand and Collapse icones.
                 if (node.nodes) {
                     var treeItemStateIcon = $(templates.treeviewItemStateIcon)
-                        .addClass(_this.settings.collapseIcon);
+                        .addClass((node.expanded)?_this.settings.expandIcon:_this.settings.collapseIcon);
                     treeItem.append(treeItemStateIcon);
                 }
                 // set node icon if exist.
@@ -158,6 +159,9 @@
                         .attr('id', _this.itemIdPrefix + node.nodeId);
                     parentElement.append(treeGroup);
                     _this.build(treeGroup, node.nodes, depth);
+                    if (node.expanded) {
+                        treeGroup.addClass(_this.settings.expandClass);
+                    }
                 }
             });
         }

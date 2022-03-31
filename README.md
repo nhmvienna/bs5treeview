@@ -9,7 +9,7 @@ A very simple plugin to build a basic and elegant Treeview with boostrap 5.
 
 ## Dependencies
 
-Where provided these are the actual versions bootstrap-treeview has been tested against.  
+Where provided these are the actual versions bootstrap-treeview has been tested against.
 
 - [Bootstrap v5)](http://getbootstrap.com/)
 - [jQuery v3.4.1 (>= 1.9.0)](http://jquery.com/)
@@ -56,6 +56,7 @@ var tree = [
   {
     text: "Node 1",
     icon: "fa fa-folder",
+    expanded: true,
     nodes: [
       {
         text: "Sub Node 1",
@@ -133,6 +134,11 @@ A class name or space separated list of class names to add to a given node.
 `String` `Optional`
 
 ID attribute value to assign to a given node.
+
+#### expanded
+`Boolean` `Optional`
+
+Set to true to expand this node's children initially
 
 ## Options
 
