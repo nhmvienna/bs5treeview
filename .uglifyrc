@@ -1,0 +1,12 @@
+{
+    "mangle": {
+        "keep_fnames": false
+    },
+    "compress": {
+        "unused": false
+    },
+    "output": {
+        "quote_style": 0
+    },
+    "warnings": true
+}

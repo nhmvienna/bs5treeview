@@ -1,7 +1,7 @@
 {
   "name": "bstreeview",
-  "version": "1.2.0",
-  "description": "Bootstrap 4 simple treeview.",
+  "version": "1.2.2",
+  "description": "Bootstrap 5 simple treeview with version field.",
   "main": "[\"./dist/css/bstreeview.min.css\",\"./dist/js/bstreeview.min.js\"]",
   "dependencies": {},
   "devDependencies": {},
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chniter/bstreeview.git"
+    "url": "git+https://github.com/albertolevyespinosa/bs5treeview-extended"
   },
   "keywords": [
     "[\"bstreeview\"",
@@ -28,11 +28,11 @@
     "\"jquery-plugin\"]"
   ],
   "author": {
-    "name": "Sami CHNITER"
+    "name": "Alberto Levy Espinosa"
   },
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/chniter/bstreeview/issues"
+    "url": "https://github.com/albertolevyespinosa/bs5treeview-extended/issues"
   },
-  "homepage": "https://github.com/chniter/bstreeview#readme"
+  "homepage": "https://github.com/albertolevyespinosa/bs5treeview-extended#readme"
 }

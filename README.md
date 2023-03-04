@@ -1,11 +1,15 @@
-# Bootstrap 5 Tree View
+# Bootstrap 5 Tree View with Version field
 
-this is a fork of https://github.com/chniter/bstreeview.
+This is a fork of https://github.com/nhmvienna/bs5treeview.
+
 For use with bootstrap 5 the attributes have been changed from data-target and data-toggle to the new data-bs-target and data-bs-toogle syntax.
 
 A very simple plugin to build a basic and elegant Treeview with boostrap 5.
 
+This version adds two features:
 
+- New optional text element called version at the end of the node.
+- Nodes element can also be provided as an empty list.
 
 ## Dependencies
 
@@ -56,18 +60,22 @@ var tree = [
   {
     text: "Node 1",
     icon: "fa fa-folder",
+    version: "v1",
     expanded: true,
     nodes: [
       {
         text: "Sub Node 1",
         icon: "fa fa-folder",
+        version: "v2",
         nodes: [
           {
             id:    "sub-node-1",
             text:  "Sub Child Node 1",
             icon:  "fa fa-folder",
+            version: "v1.1",
             class: "nav-level-3",
-            href:  "https://google.com"
+            href:  "https://google.com",
+            nodes: []
           },
           {
             text: "Sub Child Node 2",
@@ -140,6 +148,11 @@ ID attribute value to assign to a given node.
 
 Set to true to expand this node's children initially
 
+#### version
+`String` `Optional`
+
+A custom property to add a text with a version.
+
 ## Options
 
 #### data
@@ -190,11 +203,8 @@ $('#tree').bstreeview({
 ## Events
 
 
-
-
-
 ## Copyright and Licensing
-Copyright 2020 Sami CHNITER
+Copyright 2023 Alberto Levy Espinosa
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

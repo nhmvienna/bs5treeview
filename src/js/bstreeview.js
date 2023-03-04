@@ -1,12 +1,13 @@
 /*! @preserve
  * bstreeview.js
- * Version: 1.2.1
- * Authors: Sami CHNITER <sami.chniter@gmail.com>
- * Copyright 2020
+ * Version: 1.2.2
+ * Authors: Sami CHNITER <sami.chniter@gmail.com>, Alberto Levy Espinosa <alberto.levy.espinosa@gmail.com>
+ * Copyright 2023
  * License: Apache License 2.0
  *
  * Project: https://github.com/chniter/bstreeview
  * Project: https://github.com/nhmvienna/bs5treeview (bootstrap 5)
+ * Project: https://github.com/albertolevyespinosa/bs5treeview-extended (bootstrap 5 with version field)
  */
 ; (function ($, window, document, undefined) {
     "use strict";
@@ -27,11 +28,12 @@
      * bstreeview HTML templates.
      */
     var templates = {
-        treeview: '<div class="bstreeview"></div>',
+        treeview: '<div class="bstreeview list-group"></div>',
         treeviewItem: '<div role="treeitem" class="list-group-item" data-bs-toggle="collapse"></div>',
         treeviewGroupItem: '<div role="group" class="list-group collapse" id="itemid"></div>',
         treeviewItemStateIcon: '<i class="state-icon"></i>',
-        treeviewItemIcon: '<i class="item-icon"></i>'
+        treeviewItemIcon: '<i class="item-icon"></i>',
+        treeviewItemData: '<div class="item-data"></div>'
     };
     /**
      * BsTreeview Plugin constructor.
@@ -63,7 +65,7 @@
                 delete this.settings.data;
             }
             // Set main bstreeview class to element.
-            $(this.element).addClass('bstreeview');
+            $(this.element).addClass('bstreeview').addClass('list-group');
 
             this.initData({ nodes: this.tree });
             var _this = this;
@@ -128,10 +130,10 @@
                 // Main node element.
                 var treeItem = $(templates.treeviewItem)
                     .attr('data-bs-target', "#" + _this.itemIdPrefix + node.nodeId)
-                    .attr('style', 'padding-left:' + leftPadding)
+                    .attr('style', 'padding-left:' + leftPadding + '; display: flex;')
                     .attr('aria-level', depth);
                 // Set Expand and Collapse icones.
-                if (node.nodes) {
+                if (node.nodes && node.nodes.length > 0) {
                     var treeItemStateIcon = $(templates.treeviewItemStateIcon)
                         .addClass((node.expanded)?_this.settings.expandIcon:_this.settings.collapseIcon);
                     treeItem.append(treeItemStateIcon);
@@ -143,7 +145,19 @@
                     treeItem.append(treeItemIcon);
                 }
                 // Set node Text.
-                treeItem.append(node.text);
+                var treeItemTextData = $(templates.treeviewItemData)
+                .attr('style', 'flex-grow: 2');
+                treeItemTextData.append(node.text);
+                treeItem.append(treeItemTextData);
+
+                // Set node Version if exists
+                if(node.version) {
+                    var treeItemVersionData = $(templates.treeviewItemData)
+                    .attr('style', 'display: flex; justify-content: flex-end;');
+                    treeItemVersionData.append(node.version);
+                    treeItem.append(treeItemVersionData);
+                }
+
                 // Reset node href if present
                 if (node.href) {
                     treeItem.attr('href', node.href);
