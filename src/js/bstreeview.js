@@ -31,7 +31,8 @@
         treeviewItem: '<div role="treeitem" class="list-group-item" data-bs-toggle="collapse"></div>',
         treeviewGroupItem: '<div role="group" class="list-group collapse" id="itemid"></div>',
         treeviewItemStateIcon: '<i class="state-icon"></i>',
-        treeviewItemIcon: '<i class="item-icon"></i>'
+        treeviewItemIcon: '<i class="item-icon"></i>',
+        treeviewItemEmptyIcon: '<i class="fa fa-fw"></i>'
     };
     /**
      * BsTreeview Plugin constructor.
@@ -82,8 +83,7 @@
                         window.location = e.target.getAttribute('href');
                     }
                 }
-                else
-                {
+                else {
                     // Toggle the data-bs-target. Issue with Bootstrap toggle and dynamic code
                     $($(this).attr("data-bs-target")).collapse('toggle');
                 }
@@ -133,8 +133,11 @@
                 // Set Expand and Collapse icones.
                 if (node.nodes) {
                     var treeItemStateIcon = $(templates.treeviewItemStateIcon)
-                        .addClass((node.expanded)?_this.settings.expandIcon:_this.settings.collapseIcon);
+                        .addClass((node.expanded) ? _this.settings.expandIcon : _this.settings.collapseIcon);
                     treeItem.append(treeItemStateIcon);
+                } else {
+                    var treeItemEmptyIcon = $(templates.treeviewItemEmptyIcon);
+                    treeItem.append(treeItemEmptyIcon);
                 }
                 // set node icon if exist.
                 if (node.icon) {
