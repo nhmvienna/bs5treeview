@@ -55,6 +55,8 @@ Example
 var tree = [
   {
     text: "Node 1",
+    img: "data:image;base64,AAAAA...", // precedence over icon
+    imgClass: "icon",
     icon: "fa fa-folder",
     expanded: true,
     nodes: [
