@@ -31,7 +31,8 @@
         treeviewItem: '<div role="treeitem" class="list-group-item" data-bs-toggle="collapse"></div>',
         treeviewGroupItem: '<div role="group" class="list-group collapse" id="itemid"></div>',
         treeviewItemStateIcon: '<i class="state-icon"></i>',
-        treeviewItemIcon: '<i class="item-icon"></i>'
+        treeviewItemIcon: '<i class="item-icon"></i>',
+        treeviewItemImg: '<img src="" />'
     };
     /**
      * BsTreeview Plugin constructor.
@@ -137,7 +138,12 @@
                     treeItem.append(treeItemStateIcon);
                 }
                 // set node icon if exist.
-                if (node.icon) {
+                if (node.img){
+                    var treeItemImg = $(templates.treeviewItemImg)
+                        .addClass(node.imgClass ? node.imgClass : "")
+                        .prop("src", node.img);
+                    treeItem.append(treeItemImg);
+                } else if (node.icon) {
                     var treeItemIcon = $(templates.treeviewItemIcon)
                         .addClass(node.icon);
                     treeItem.append(treeItemIcon);
